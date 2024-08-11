@@ -66,4 +66,12 @@ RUN pip install -r requirements.txt
 COPY . /code/
 ```
 
+حال در مرحله آخر برای اجرا داکر، در ابتدا با استفاده از دستور docker-compose up طبق تصوری زیر مشاهده می‌کنیم که در ابتدا Image های مورد‌نیاز هرکدام از سرویس‌ها از داکرهاب pull می‌شوند و بعد کانتینر مربوط به سیستم‌ها ایجاد شده و دستورات در فایل Dockerfile نیز اجرا می‌شوند:
 
+![](https://github.com/amir-haji/SE_Lab_exp_5/blob/main/screenshots/1.png)
+
+در آخر، برای ورود به سیستم نیاز است که یک سوپریوزر برای ورود به سیستم django ایجاد شود. برای اینکار ما در اینجا از اعمال دستور createsuperuser در خود کانتینر‌ها استفاده کرده‌ایم. در ابتدا می‌توان شماره کانترنری که django در آن اجرا می‌شود را با دستور docker containers ls -a پیدا کرد و بعد دستورات زیر را در محیط ترمینال آن ایجاد کرد تا این superuser ایجاد شود:
+
+![](https://github.com/amir-haji/SE_Lab_exp_5/blob/main/screenshots/2.png)
+
+حال بعد از این مرحله با زدن آدرس http://localhost:8000/admin با نام کاربری و رمز superuser ایجاد‌شده وارد سیستم شد.
